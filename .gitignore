@@ -1,7 +1,3 @@
-# Git and Docker
-.git
-Dockerfile
-.dockerignore
 # Python
 __pycache__/
 *.pyc

@@ -14,6 +14,16 @@ app = FastAPI(
     version="1.0.0",
 )
 
+# --- 新增 CORS 設定段落 ---
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # 允許所有來源，開發測試最方便
+    allow_credentials=True,
+    allow_methods=["*"],  # 允許所有方法 (GET, POST 等)
+    allow_headers=["*"],  # 允許所有 Header
+)
+# -----------------------
+
 # --- 核心天氣查詢邏輯 ---
 TAIWAN_CITIES = [
     "臺北市", "新北市", "桃園市", "臺中市", "臺南市", "高雄市",
